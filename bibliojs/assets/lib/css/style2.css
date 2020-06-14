@@ -1,0 +1,92 @@
+
+body{
+    background: #DDDDDD;
+}
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+}
+  
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+footer {
+  margin-top: 5%;
+  position: fixed;
+  font-size: 80%;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.filtro {
+  display: inline;
+  text-align: justify;
+  }
+ 
+  #img {
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .tarjeta:hover #img {
+    opacity: 0.8;
+  }
+
+  .tarjeta {
+    padding: 10px;
+  }
+
+  .nav {
+    margin-bottom: 7%; 
+    padding-bottom: 2.5rem;
+   }
+
+	.titulo {
+      font-size: 220%;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      text-shadow: 2px 2px 5px rgb(0, 14, 75);
+      margin-top: 2%;
+      margin-bottom: 3%;
+      float: center;
+      
+	}
+
+	.mejores {
+      margin-top: 5%;
+      
+      margin-bottom: 2%;
+	}
+.cuadro-info{
+	background:#FFFFFF;
+  	border-radius:5px;
+  	padding-top:5px;
+  	border-color:grey;
+}

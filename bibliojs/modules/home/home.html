@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Info Peliculas</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#!Home">Biblioteca</a>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#!Home">Inicio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!peliculas">Películas</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!series">Series</a>
+              </li>
+      
+              <li class="nav-item" ng-hide="ocultarBiblio">
+                  <a class="nav-link" href="#!biblioteca">Biblioteca</a>
+              </li>
+
+              <li class="nav-item" ng-hide="ocultarGestion">
+                <a class="nav-link" href="#!admin">Gestionar</a>
+            </li>
+            
+              <li class="nav-item" ng-hide="ocultarSesion">
+                  <a class="nav-link" href="#!login">Iniciar sesión</a>
+              </li>
+      
+              <li class="nav-item" ng-hide="!ocultarSesion">
+                  <a class="nav-link" href="#!logout">Cerrar sesión</a>
+              </li>
+                              
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <label for="busc" style="color: white; margin-right: 3px;">Buscar: </label>
+              <input class="form-control mr-sm-2" id="busc" type="text" ng-model="buscador" placeholder="Buscar..." aria-label="Search">
+          </form>
+        </div>
+      </nav>
+    
+
+  
+ <div class="mejores container">
+   <strong class="titulo">BIENVENIDO A LA BIBLIOTECA DE SERIES Y PELÍCULAS</strong>
+   <h4>Infórmate y comenta las películas y series más recientes. </h4>
+   <div style="margin-top:15px;">
+     <h2>Añadidas recientemente:</h2>
+    <div class="col-sm-9 mt-4">
+            <div class="row " >
+                <div class="tarjeta col-sm-3 text-center my-2 ml-2" dir-paginate='pelicula in peliculas | itemsPerPage:5' style="height: 250px; width:500px;">
+                    <a href="#!/pelicula/{{pelicula.id}}"/>
+                        <img id="img" ng-src="{{pelicula.img}}" alt="{{pelicula.nombre}}" style="height: 80%; width:80%; margin-top: 2%;">
+                            <div>
+                                <strong>{{pelicula.nombre}}</strong>
+                            </div> 
+                  </a>
+                </div>
+            </div>
+    </div>
+    
+    <div class="col-sm-9">
+            <div class="row ">
+                <div class="tarjeta col-sm-3 text-center my-2 ml-2" dir-paginate='serie in series | itemsPerPage:5' style="height: 250px; width:500px;">
+                    <a href="#!/serie/{{serie.id}}">
+                        <img id="img" ng-src="{{serie.img}}" alt="{{serie.nombre}}" style="height: 80%; width:80%; margin-top: 2%;">
+                            <div>
+                                <strong>{{serie.nombre}}</strong>
+                            </div>  
+                  	</a>
+                </div>
+            </div>
+      </div>
+  </div>
+
+</div>
+  
+</body>
+</html>

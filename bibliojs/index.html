@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="App">
+<head>
+    <title>Biblioteca de series y películas</title>
+    <link rel="shortcut icon" type="image/png" href="https://cdn.discordapp.com/attachments/705692666251182090/721010741775171644/movie-camera-309978_960_720.png">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="assets/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/lib/css/style2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="assets/lib/jquery-3.5.1.js"></script>
+    <script src="assets/lib/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+    <script src="assets/lib/js/pagination/dirPagination.js"></script>
+    <script src="assets/lib/js/pagination/dirPagination.spec.js"></script>
+    
+    <script src="app.js"></script>
+
+    <script src="modules/home/home.config.js"></script>
+    <script src="modules/home/home.js"></script>
+ 
+    <script src="modules/peliculas/peliculas.config.js"></script> 
+    <script src="services/models/pelisModel.js"></script>
+    <script src="modules/peliculas/pelicula_info.js"></script>
+    <script src="modules/peliculas/peliculas.js"></script>
+  	<script src="modules/peliculas/pelicula_genero.js"></script>
+
+    <script src="modules/series/series.config.js"></script>
+    <script src="modules/series/serie_info.js"></script>
+    <script src="modules/series/series.js"></script>
+  	<script src="modules/series/serie_genero.js"></script>
+
+    <script src="modules/login/login.config.js"></script>
+    <script src="modules/login/login.js"></script>
+    <script src="modules/login/logout.js"></script>
+    <script src="modules/login/register.js"></script>
+
+    <script src="modules/biblioteca/biblioteca.config.js"></script>
+    <script src="modules/biblioteca/biblioteca.js"></script>
+    <script src="modules/biblioteca/biblioteca.js"></script>
+
+    <script src="modules/admin/admin.config.js"></script>
+    <script src="modules/admin/admin.js"></script>
+
+      <div ng-view class="nav"></div>
+  
+  <footer>
+        <div class="p-3 pb-2 bg-light">
+            <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png" alt="licencia CC BY SA" width="115" height="40"></img>
+            Esta obra está bajo una <a href="https://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-Compartir Igual 4.0 Internacional</a><br>
+    		<p>Autores: Alberto Olmo Abellán, Adolfo del Cacho Egea y Daniel Abellán Segorbe.
+    		 <a href=""><svg class="bi bi-envelope-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            	<path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+            	</svg> Contáctanos</a>
+            </p>
+        </div>
+  </footer>
+</body>
+
+</html>

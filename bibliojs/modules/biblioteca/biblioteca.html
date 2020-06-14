@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Peliculas</title>
+</head>
+<body>
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#!Home">Biblioteca</a>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#!Home">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#!peliculas">Películas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#!series">Series</a>
+        </li>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="#!biblioteca">Biblioteca</a>
+        </li>
+
+        <li class="nav-item" ng-hide="ocultarGestion">
+            <a class="nav-link" href="#!admin">Gestionar</a>
+        </li>
+        
+        <li class="nav-item " ng-hide="ocultarSesion">
+            <a class="nav-link" href="#!login">Iniciar sesión</a>
+        </li>
+
+        <li class="nav-item " ng-hide="!ocultarSesion">
+            <a class="nav-link" href="#!logout">Cerrar sesión</a>
+        </li>
+                        
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <label for="busc" style="color: white; margin-right: 3px;">Buscar: </label>
+        <input class="form-control mr-sm-2" id="busc" type="text" ng-model="buscador" placeholder="Buscar..." aria-label="Search">
+    </form>
+  </div>
+</nav>
+    <div class="container" style="margin-top: 70px;">
+        
+            <div class="col-sm-9">
+                <h2>Películas que has visto:</h2>
+                <div class="row " >
+                    <div class="tarjeta col-sm-3 my-2 ml-2 text-center" ng-repeat='pelicula in peliculas | filter:buscador' style="height: 250px; width:500px;">
+                
+                            <a href="#!/pelicula/{{pelicula.id}}">
+                        
+                                <img id="img" ng-src="{{pelicula.img}}" alt="{{pelicula.nombre}}" style="height: 80%; width:80%; margin-top: 2%;">
+                            <div>
+                                <strong>{{pelicula.nombre}}</strong>
+                            </div>
+                  			</a>
+                    </div>   
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <h2>Series que has visto:</h2>
+                <div class="row " >
+                    <div class="tarjeta col-sm-3 my-2 ml-2 text-center" ng-repeat='serie in series | filter:buscador' style="height: 250px; width:500px;">
+                
+                            <a href="#!/serie/{{serie.id}}">
+                        
+                                <img id="img" ng-src="{{serie.img}}" alt="{{serie.nombre}}" style="height: 80%; width:80%; margin-top: 2%;">
+                            <div>
+                                <strong>{{serie.nombre}}</strong>
+                            </div>
+              				</a>
+                    </div>
+                </div>
+               
+            </div>
+			<div class="col-sm-9">
+                <h2>Películas pendientes:</h2>
+                <div class="row " >
+                    <div class="tarjeta col-sm-3 text-center  my-2 ml-2" ng-repeat='peliPendiente in peliculasPendientes | filter:buscador' style="height: 250px; width:500px;">
+                
+                            <a href="#!/pelicula/{{peliPendiente.id}}">
+                        
+                                <img id="img" ng-src="{{peliPendiente.img}}" alt="{{peliPendiente.nombre}}" style="height: 80%; width:80%; margin-top: 2%;">
+                            <div>
+                                <strong>{{peliPendiente.nombre}}</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-9">
+                <h2>Series pendientes:</h2>
+                <div class="row " >
+                    <div class="tarjeta col-sm-3 text-center  my-2 ml-2" ng-repeat='seriePendiente in seriesPendientes | filter:buscador' style="height: 250px; width:500px;">
+                
+                            <a href="#!/serie/{{seriePendiente.id}}">
+                        
+                                <img id="img" ng-src="{{seriePendiente.img}}" alt="{{seriePendiente.nombre}}" style="height: 80%; width:80%; margin-top: 2%;">
+                            <div>
+                                <strong>{{seriePendiente.nombre}}</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
